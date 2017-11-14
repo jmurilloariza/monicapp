@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Hello world</title></head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost:3030', { 'forceNew': true } )
+      
+      socket.emit('init', {id: '123456', group: '1dx67m4aoj66huj14'})
+
+      socket.on('hi', (data) => {
+        console.log(data)
+      })
+      
+      socket.on('conectados', (data) => {
+          //document.body.innerHTML = '';
+          //document.write(data);
+          console.log(data)
+      });
+
+      socket.on('recive', (data) => {
+        console.log(data)
+      })
+    </script>
+    <body>
+      <h1>API MonicApp 1.0.0</h1>
+    </body>
+</html>
